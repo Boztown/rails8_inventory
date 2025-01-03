@@ -2,7 +2,7 @@
 <ul id="items">
   <% @items.each do |item| %>
     <li>
-      <%= item.name %>
+      <%= link_to item.name, item %>
     </li>
   <% end %>
 </ul>
