@@ -1,5 +1,21 @@
 <% content_for :page_content do %>
-  <p><%= @item.description %></p>
-  <p><%= link_to "Edit", edit_item_path(@item) %></p>
+  <div class="flow-root max-w-4xl">
+    <dl class="-my-3 divide-y divide-gray-100 text-sm">
+      <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Name</dt>
+        <dd class="text-gray-700 sm:col-span-2"><%= @item.name %></dd>
+      </div>
+
+      <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+        <dt class="font-medium text-gray-900">Description</dt>
+        <dd class="text-gray-700 sm:col-span-2"><%= @item.description %></dd>
+      </div>
+    </dl>
+  </div>
+
+  <div class="flex border-t border-gray-200 py-3 mt-6">
+    <%= link_to "Edit", edit_item_path(@item), class: "button" %></p>
+  </div> 
 <% end %>
 <%= render partial: "shared/page", locals: { title: @item.name } %>
+
