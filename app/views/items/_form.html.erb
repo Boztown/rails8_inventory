@@ -1,15 +1,17 @@
 <%= form_with model: item do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    <% if item.errors[:name].any? %>
-      <div class="error">
-        <%= item.errors[:name].join(", ") %>
-      </div>
-    <% end %>
-  </div>
+  <div class="flex flex-col gap-4">
+    <div class="form-item">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+      <% if item.errors[:name].any? %>
+        <div class="error">
+          <%= item.errors[:name].join(", ") %>
+        </div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div class="form-item">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
