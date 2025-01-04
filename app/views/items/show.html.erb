@@ -1,2 +1,4 @@
-<p><%= @item.name %></p>
-<p><%= link_to "Edit", edit_item_path(@item) %></p>
+<% content_for :page_content do %>
+  <p><%= link_to "Edit", edit_item_path(@item) %></p>
+<% end %>
+<%= render partial: "shared/page", locals: { title: @item.name } %>
