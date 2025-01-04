@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.where(account_id: Current.user.current_account.id)
   end
 
   def show
@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.account = Current.user.current_account
     if @item.save
       redirect_to @item
     else
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    puts Current.user.inspect
     @item = Item.find(params[:id])
   end
 
