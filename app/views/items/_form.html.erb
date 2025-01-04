@@ -2,6 +2,11 @@
   <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <% if item.errors[:name].any? %>
+      <div class="error">
+        <%= item.errors[:name].join(", ") %>
+      </div>
+    <% end %>
   </div>
 
   <div>
