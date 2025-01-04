@@ -11,6 +11,16 @@
     </div>
 
     <div class="form-item">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+      <% if item.errors[:description].any? %>
+        <div class="error">
+          <%= item.errors[:description].join(", ") %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="form-item">
       <%= form.submit %>
     </div>
   </div>
