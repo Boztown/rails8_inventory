@@ -1,18 +1,23 @@
 <% content_for :page_content do %>
+  <% if @items.empty? %>
+    <p class="text-center">No items found.</p>
+    <%= component("add_button", link_to: new_item_path) %>
+  <% else %>
   <%= component("add_button", link_to: new_item_path) %>
-  <table id="items" class="min-w-full divide-y divide-gray-200 border border-gray-200">
-    <thead class="bg-gray-50">
-      <tr>
-        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-      </tr>
-    </thead>
-    <tbody class="bg-white divide-y divide-gray-200">
-      <% @items.each do |item| %>
+    <table id="items" class="min-w-full divide-y divide-gray-200 border border-gray-200">
+      <thead class="bg-gray-50">
         <tr>
-          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= link_to item.name, item %></td>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <% @items.each do |item| %>
+          <tr>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= link_to item.name, item %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 <% end %>
 <%= render partial: "shared/page", locals: { title: "Items" } %>
