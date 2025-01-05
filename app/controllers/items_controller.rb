@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    puts Current.user.inspect
     @item = Item.find(params[:id])
   end
 
