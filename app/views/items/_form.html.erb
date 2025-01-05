@@ -21,7 +21,21 @@
     </div>
 
     <div class="form-item">
-      <%= button_to "Cancel", item_path(item), class: "secondary" %>
+      <%= form.label :photo %>
+      <%= form.file_field :photo %>
+      <% if item.errors[:photo].any? %>
+        <div class="error">
+          <%= item.errors[:photo].join(", ") %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="form-item">
+      <% if item.id %>
+        <%= button_to "Cancel", item_path(item), class: "secondary" %>
+      <% else %>
+        <%= link_to "Cancel", items_path, class: "secondary" %>
+      <% end %>
       <%= form.submit %>
     </div>
   </div>
