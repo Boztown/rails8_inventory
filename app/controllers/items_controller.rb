@@ -27,6 +27,11 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+
+    if params[:item][:remove_photo] == "1"
+      @item.photo.purge
+    end
+
     if @item.update(item_params)
       redirect_to @item
     else
@@ -38,7 +43,7 @@ class ItemsController < ApplicationController
 
   def item_params
     params.expect(item: [
-      :name, :description, :photo
+      :name, :description, :photo, :remove_photo
     ])
   end
 end

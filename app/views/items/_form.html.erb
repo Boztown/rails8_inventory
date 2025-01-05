@@ -22,11 +22,19 @@
 
     <div class="form-item">
       <%= form.label :photo %>
+      <% if item.photo.attached? %>
+      <div class="current-photo">
+        <p>Current photo:</p>
+        <%= image_tag item.photo, class: "max-w-sm" %>
+        <%= form.check_box :remove_photo %>
+        <%= form.label :remove_photo, "Remove photo" %>
+      </div>
+      <% end %>
       <%= form.file_field :photo %>
       <% if item.errors[:photo].any? %>
-        <div class="error">
-          <%= item.errors[:photo].join(", ") %>
-        </div>
+      <div class="error">
+        <%= item.errors[:photo].join(", ") %>
+      </div>
       <% end %>
     </div>
 
