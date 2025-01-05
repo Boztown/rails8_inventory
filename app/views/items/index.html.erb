@@ -1,5 +1,5 @@
 <% content_for :page_content do %>
-  <%= link_to "Add Item", new_item_path, class: "button" %>
+  <%= component("add_button", link_to: new_item_path) %>
   <table id="items" class="min-w-full divide-y divide-gray-200 border border-gray-200">
     <thead class="bg-gray-50">
       <tr>
