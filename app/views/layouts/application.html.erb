@@ -27,6 +27,15 @@
     
     
     <main class="container mx-auto p-5">
+      <ul class="space-y-1">
+        <li>
+          <%= link_to "Items", items_path, class: "block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700" %>
+        </li>
+
+        <li>
+          <%= link_to "Add Item", new_item_path, class: "block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700" %>
+        </li>
+      </ul>      
       <%= yield %>
     </main>
   </body>
