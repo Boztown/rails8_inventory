@@ -25,23 +25,38 @@
 
 <body> 
     <main class="container mx-auto p-5">
-      <ul class="nav">
-        <li>
-          <%= link_to "Items", items_path, class: current_page?(items_path) ? "active" : "" %>
-        </li>
+      <div data-controller="nav">
+        <%# <button data-nav-target="navButton">Toggle Navigation</button> %>
 
-        <li>
-          <%= link_to "Add Item", new_item_path, class: current_page?(new_item_path) ? "active" : "" %>
-        </li>
+        <div class="flex justify-end">
+          <svg data-nav-target="navButton" class="w-6 h-6 cursor-pointer text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+          </svg>
+        </div>
 
-        <li>
-          <a href="">Places</a>
-        </li>
+        <ul id="main-nav" class="nav">
+          <li>
+            <span data-nav-target="navCloseButton" class="cursor-pointer">X</span> 
+          </li>
 
-        <li>
-          <a href="">Add Place</a>
-        </li>
-      </ul>      
+          <li>
+            <%= link_to "Items", items_path, class: current_page?(items_path) ? "active" : "" %>
+          </li>
+
+          <li>
+            <%= link_to "Add Item", new_item_path, class: current_page?(new_item_path) ? "active" : "" %>
+          </li>
+
+          <li>
+            <a href="">Places</a>
+          </li>
+
+          <li>
+            <a href="">Add Place</a>
+          </li>
+        </ul>     
+      </div> 
+
       <%= yield %>
     </main>
   </body>

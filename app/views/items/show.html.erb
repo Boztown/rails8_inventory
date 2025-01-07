@@ -1,7 +1,7 @@
 <% content_for :page_content do %>
   <% if @item.photo.present? %>
     <div class="item-photo">
-      <%= image_tag @item.photo, class: "rounded-lg max-w-2xl" %>
+      <%= image_tag @item.photo %>
     </div>
   <% end %>
   <div class="flow-root max-w-4xl">
