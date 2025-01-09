@@ -4,21 +4,15 @@
       <%= image_tag @item.photo %>
     </div>
   <% end %>
-  <div class="flow-root max-w-4xl">
-    <dl class="-my-3 divide-y divide-gray-100 text-sm">
-      <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-        <dt class="font-medium text-gray-900">Name</dt>
-        <dd class="text-gray-700 sm:col-span-2"><%= @item.name %></dd>
-      </div>
+  <dl>
+    <dt>Name</dt>
+    <dd><%= @item.name %></dd>
 
-      <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
-        <dt class="font-medium text-gray-900">Description</dt>
-        <dd class="text-gray-700 sm:col-span-2"><%= @item.description %></dd>
-      </div>
-    </dl>
-  </div>
+    <dt>Description</dt>
+    <dd><%= @item.description.presence || "-" %></dd>
+  </dl>
 
-  <div class="flex border-t border-gray-200 py-3 mt-6">
+  <div class="form-actions">
     <%= link_to "Edit", edit_item_path(@item), class: "button" %></p>
   </div> 
 <% end %>
