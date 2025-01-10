@@ -20,11 +20,12 @@
 }
 
 .field_with_errors > input {
-  @apply border-red-500 bg-red-50;
+  background-color: #fed7d7;
+  border-color: #e53e3e;
 }
 
 .field_with_errors > input:focus {
-  @apply bg-white;
+  background: white;
 }
 
 .error {
