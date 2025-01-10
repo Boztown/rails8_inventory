@@ -60,3 +60,15 @@ table {
   align-items: center;
   gap: 1rem;
 }
+
+#layout-top-bar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-menu {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  color: #1f2937;
+}
