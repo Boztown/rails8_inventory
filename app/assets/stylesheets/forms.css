@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.form-actions {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  align-items: center;
+  border-top-width: 1px;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  box-shadow: inset 0 3px 2px -2px rgba(0, 0, 0, 0.05);
+
+  &.even {
+    justify-content: space-between;
+  }
+}
+
+.field_with_errors > input {
+  background-color: #fed7d7;
+  border-color: #e53e3e;
+}
+
+.field_with_errors > input:focus {
+  background: white;
+}
+
+.error {
+  color: #e53e3e;
+}
