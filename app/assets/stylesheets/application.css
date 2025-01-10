@@ -18,3 +18,45 @@ dl {
     margin-bottom: 1rem;
   }
 }
+
+table {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+
+  thead {
+    border: 1px solid #e5e7eb;
+
+    tr {
+      background-color: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      padding: 0.75rem 1.5rem;
+      text-align: left;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 0.75rem;
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid #f9fafb;
+
+      td {
+        padding: 0.75rem 1.5rem;
+      }
+    }
+  }
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
