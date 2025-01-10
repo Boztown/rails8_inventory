@@ -100,6 +100,7 @@ a.button {
   font-weight: 500;
   padding: 0.75rem 1.25rem;
   color: rgb(255 255 255 / 1);
+  text-decoration: none;
 }
 
 input[type="submit"].secondary,
@@ -116,21 +117,6 @@ button.secondary:hover,
 a.button.secondary:hover {
   border-width: 1px;
   border-color: rgb(229 231 235 / 1);
-}
-
-.form-actions {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  align-items: center;
-  border-top-width: 1px;
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  box-shadow: inset 0 3px 2px -2px rgba(0, 0, 0, 0.05);
-}
-
-.error {
-  color: #e53e3e;
 }
 
 .title {
@@ -201,14 +187,6 @@ ul.nav {
 
 img {
   max-width: 100%;
-}
-
-.field_with_errors > input {
-  @apply border-red-500 bg-red-50;
-}
-
-.field_with_errors > input:focus {
-  @apply bg-white;
 }
 
 .slide-in-top {

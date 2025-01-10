@@ -1,21 +1,25 @@
-<div class="mx-auto md:w-2/3 w-full">
+<div class="box">
   <% if alert = flash[:alert] %>
-    <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
+    <%= component("alert") do %>
+      <p><%= alert %></p>
+    <% end %>   
   <% end %>
 
-  <h1 class="font-bold text-4xl">Update your password</h1>
+  <h1 class="title">Update your password</h1>
 
   <%= form_with url: password_path(params[:token]), method: :put, class: "contents" do |form| %>
-    <div class="my-5">
-      <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Enter new password", maxlength: 72 %>
-    </div>
+    <div class="form">
+      <div class="form-item">
+        <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Enter new password", maxlength: 72 %>
+      </div>
 
-    <div class="my-5">
-      <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Repeat new password", maxlength: 72 %>
-    </div>
+      <div class="form-item">
+        <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Repeat new password", maxlength: 72 %>
+      </div>
 
-    <div class="inline">
-      <%= form.submit "Save" %>
+      <div class="form-actions">
+        <%= form.submit "Save" %>
+      </div>
     </div>
   <% end %>
 </div>

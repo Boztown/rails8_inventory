@@ -1,0 +1,10 @@
+.alert {
+  padding: 0.5rem;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0;
+  }
+}

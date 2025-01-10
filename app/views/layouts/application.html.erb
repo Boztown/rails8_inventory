@@ -53,6 +53,10 @@
           <li>
             <a href="">Add Place</a>
           </li>
+
+          <li>
+            <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+          </li>
         </ul>     
       </div> 
 
