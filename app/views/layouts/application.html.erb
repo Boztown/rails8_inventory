@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "StashMap" %></title>
+    <title><%= content_for(:title) || "StashMap!" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -17,26 +17,25 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'vendor/modern-normalize', "data-turbo-track": "reload" %>    
+
+    <%# Includes all other stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
 <body> 
-    <main class="container mx-auto p-5">
+    <main class="container">
       <div data-controller="nav">
-        <%# <button data-nav-target="navButton">Toggle Navigation</button> %>
-
-        <div class="flex justify-end">
-          <svg data-nav-target="navButton" class="w-6 h-6 cursor-pointer text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <div id="layout-top-bar">
+          <svg data-nav-target="navButton" class="icon-menu" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
           </svg>
         </div>
 
         <ul id="main-nav" class="nav">
           <li>
-            <span data-nav-target="navCloseButton" class="cursor-pointer">X</span> 
+            <span data-nav-target="navCloseButton" style="cursor: pointer;">X</span> 
           </li>
 
           <li>
@@ -57,7 +56,9 @@
         </ul>     
       </div> 
 
-      <%= yield %>
+      <div id="view">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
