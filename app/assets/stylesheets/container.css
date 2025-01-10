@@ -1,0 +1,49 @@
+:root {
+  /* Breakpoint values */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small (sm) */
+@media (min-width: --breakpoint-sm) {
+  .container {
+    max-width: --breakpoint-sm;
+  }
+}
+
+/* Medium (md) */
+@media (min-width: --breakpoint-md) {
+  .container {
+    max-width: --breakpoint-md;
+  }
+}
+
+/* Large (lg) */
+@media (min-width: --breakpoint-lg) {
+  .container {
+    max-width: --breakpoint-lg;
+  }
+}
+
+/* Extra Large (xl) */
+@media (min-width: --breakpoint-xl) {
+  .container {
+    max-width: --breakpoint-xl;
+  }
+}
+
+/* 2xl */
+@media (min-width: --breakpoint-2xl) {
+  .container {
+    max-width: --breakpoint-2xl;
+  }
+}

@@ -25,7 +25,7 @@
   </head>
 
 <body> 
-    <main class="container mx-auto p-5">
+    <main class="container">
       <div data-controller="nav">
         <div id="layout-top-bar">
           <svg data-nav-target="navButton" class="icon-menu" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -56,7 +56,9 @@
         </ul>     
       </div> 
 
-      <%= yield %>
+      <div id="view">
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>

@@ -67,11 +67,6 @@ table {
   gap: 1rem;
 }
 
-#layout-top-bar {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .icon-menu {
   width: 1.5rem;
   height: 1.5rem;
@@ -142,6 +137,7 @@ a.button.secondary:hover {
   font-size: 1.875rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
+  margin-top: 0;
 }
 
 ul.nav {
